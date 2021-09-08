@@ -1,0 +1,46 @@
+<h4> All Users - Vocabulary Words </h4>
+
+<div class="cards-container">
+
+  {{#each data}}
+   {{! ############################################################## }}
+   <div class="card-word">
+    <section class="word-content">
+     <p> {{word}} </p>
+
+    <div class="btn-section">
+      {{{checkVocabBelongsToUser this ../myUser _id}}}
+    </div>
+ 
+    </section>
+  
+    <section class="definitions-container">
+
+     {{#each means}}
+      <div class="definition-section">
+       <p class="word-type">{{wordType}}</p>
+       <p class="mean-text">{{definition}}</p>
+       <p class="example-title">Examples</p>
+       <div class="example-content">
+        <ul class="example-list">
+         {{#each examples}}
+          <li> {{this}} </li>
+         {{/each}}
+        </ul>
+       </div>
+      </div>
+     {{/each}}
+ 
+   
+
+   </div>
+
+   {{! ############################################################## }}
+   {{else}} {{!-- If no public words in each --}}
+  
+    <p> No Public Words </p>
+
+  {{/each}}
+ {{! // End If statement }}
+
+</div>

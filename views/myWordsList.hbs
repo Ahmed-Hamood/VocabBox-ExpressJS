@@ -1,0 +1,51 @@
+<h5> Welcome {{name}}</h5>
+  <a href="/word/add" class="btn red"> Add New Word</a>
+<h4> All Vocabulary Word </h4>
+
+<div class="cards-container">
+
+ {{#if data}}
+
+  {{#each data}}
+   {{! ############################################################## }}
+   <div class="card-word">
+    <section class="word-content">
+     <p> {{word}} </p>
+
+    <div class="btn-section">
+      <h6 class="available left">  {{available}}  </h6>
+     <a href="/word/remove/mylist/{{_id}}" class="btn red"> Remove </a>
+     <a href="/word/edit/mylist/{{_id}}" class="btn"> Update </a>
+    </div>
+ 
+    </section>
+  
+    <section class="definitions-container">
+
+     {{#each means}}
+      <div class="definition-section">
+       <p class="word-type">{{wordType}}</p>
+       <p class="mean-text">{{definition}}</p>
+       <p class="example-title">Examples</p>
+       <div class="example-content">
+        <ul class="example-list">
+         {{#each examples}}
+          <li> {{this}} </li>
+         {{/each}}
+        </ul>
+       </div>
+      </div>
+     {{/each}}
+ 
+  
+   
+   </div>
+   {{! ############################################################## }}
+  {{/each}}
+
+ {{else}}
+  <p> You Don't have words Start Adding your words </p>
+ {{/if}}
+ {{! // End If statement }}
+
+</div>

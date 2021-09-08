@@ -1,0 +1,74 @@
+<h3> Add New Word </h3>
+
+
+<form action="" class="row">
+<div class="input-field">
+  <label for=""> Word</label>
+  <input type="text" name="word" id="word">
+</div>
+
+
+  <label for=""> Available</label>
+  <select name="available" id="available">
+    <option value="" selected> Select Available ....</option>
+    <option value="public">Public</option>
+    <option value="private">Private</option>
+  </select>
+
+
+<div class="input-field">
+  <label for="">Definition</label>
+  <input type="text" name="definition" id="definition">
+</div>
+ 
+<div class="input-field">
+  <label for="">Type (Noun, Verb, Adjective)</label>
+  <input type="text" name="type" id="type">
+</div>
+ 
+
+<div class="input-field">
+  <input type="text" name="example1" class="example" placeholder="Example 1">
+  <input type="text" name="example2" class="example" placeholder="Example 2 (Optional)">
+  <input type="text" name="example3" class="example" placeholder="Example 3 (Optional)">
+</div>
+
+
+  <button id="addWord" class="btn"> Add Word </button>  
+  <button id="submitWord" class="btn"> Finish </button>
+</form>
+
+
+  <div class="result_content">
+    <table style="width:40%">
+      <tr>
+        <th>Word</th>
+        <th>WordType</th>
+        <th>Definition</th>
+        <th>Examples</th>
+      </tr>
+      <tbody id="table_body">
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script> 
+   let VocabWord = {
+    word: "",
+    available: "",
+    means: [
+      {{!-- {
+      definition: "",
+      wordType: "",
+      examples: ["", ""],
+      }, --}}
+    ],
+   }
+
+   let fromPage = "mylist"
+</script>
+
+<script src="/js/app.js">
+</script>

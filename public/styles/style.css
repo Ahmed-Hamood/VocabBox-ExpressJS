@@ -1,0 +1,19 @@
+p {
+ margin: 10px 0 !important;
+}
+
+h4 {
+ font-size: 2rem;
+ line-height: 110%;
+ margin: 1.52rem 0.912rem ;
+}
+
+.login-container {
+ width: 700px;
+ margin-top: 60px;
+ text-align: center;
+}
+
+.card .card-content {
+ padding: 8px;
+}

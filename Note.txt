@@ -1,0 +1,62 @@
+1. initialize package.json
+> npm init --yes
+
+2- install dependencies 
+> npm i express dotenv mongodb connect-mongo express-session express-handlebars method-override moment morgan passport passport-google-oauth20
+
+# Express: the web framework to create an application with routes
+# dotenv: to store our environment variables our application configuration
+# mongodb: work with our mongo database
+# connect-mongo: allow us to store our sessions into the database so when we reset the server we don't get logged out 
+# express-session: for sessions and cookies 
+# express-handlebars: a template engine 
+# method-override: enable using PUT & DELETE requests from our templates. By default we have only GET & POST
+# moments: used to format dates
+# morgan: used for logging requests
+# passport: used for authentication 
+# passport-google-oauth20: using for google authentication 2.0 package
+
+3 - Create an API Key and Secret for your Google oAuth20
+
+# step 1: Visit google cloud console -> https://console.cloud.google.com/
+# step 2: Create a new project from Select Project > New Project
+# step 3: New Project > Project name : ### > Press Create > wait > select your newly created project
+# step 4: Go to APIs & Services > ENABLE APIS AND SERVICES 
+# step 5: Look for Google+ API click it > Enable it then wait 
+# step 6: After Google+ API is enables > go to Credentials > click on Credentials in APIs & Services link to go to Credentials to create oAuth
+# step 7: Click on Create Credentials > OAuth client ID > then set application mode for testing
+# step 8: In App information set App name and developer email then click create
+# step 9: In Credentials page > click on Create OAuth client > set Application type to web application > set Name
+# step 10: In Authorized redirect URIs section > ADD URL > set it to "http://localhost:3000/auth/google/cb" > then click Create
+# step 11: Your Client ID and Secret will popup copy them into your application config by the name GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET
+# step 12: DONE All Set
+ 
+4 - Google authentication profile
+
+profile:{
+  id: '115080097053038866474',
+  displayName: 'Remxz Studio',
+  name: { familyName: 'Studio', givenName: 'Remxz' },
+  photos: [
+    {
+      value: 'https://lh3.googleusercontent.com/a-/AOh14GgTwxtnaeOkRdtlzWR9Qjf84hdxnAjemQaaIOoK=s96-c'
+    }
+  ],
+  provider: 'google',
+  _raw: '{\n' +
+    '  "sub": "115080097053038866474",\n' +
+    '  "name": "Remxz Studio",\n' +
+    '  "given_name": "Remxz",\n' +
+    '  "family_name": "Studio",\n' +
+    '  "picture": "https://lh3.googleusercontent.com/a-/AOh14GgTwxtnaeOkRdtlzWR9Qjf84hdxnAjemQaaIOoK\\u003ds96-c",\n' +
+    '  "locale": "en"\n' +
+    '}',
+  _json: {
+    sub: '115080097053038866474',
+    name: 'Remxz Studio',
+    given_name: 'Remxz',
+    family_name: 'Studio',
+    picture: 'https://lh3.googleusercontent.com/a-/AOh14GgTwxtnaeOkRdtlzWR9Qjf84hdxnAjemQaaIOoK=s96-c',
+    locale: 'en'
+  }
+}
